@@ -1,0 +1,424 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "fbb5aef8-f349-434c-8f3d-05b6a770a335",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pandas as pd"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "ffccce06-b407-4dd3-b48e-d4427f2b8edd",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "pd."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "4c100ab4-2e5f-4344-a155-cbc5ce5d93c8",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df = pd.read_csv('telco_churn.csv')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "69abcc2f-345d-4c82-beb2-b7c488cc7223",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "tempdict = {'col1':[1,2,3], 'col2':[4,5,6], 'col3':[7,8,9]}"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "9b554a26-807c-4bc8-8107-4fee9c20c2b6",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "dictdf = pd.DataFrame.from_dict(tempdict)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "4d11ab44-e309-4883-b7cb-8b85f21ff945",
+   "metadata": {},
+   "source": [
+    "df.head(10)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a88ee37c-82a1-494c-9c0a-98f373169993",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "dictdf.head()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "44184451-e59d-483f-9113-ebb42bb85850",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df.tail(15)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "70c496ae-d11a-48f3-a612-429ff0350254",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df.columns"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "80490542-794b-4666-b9a9-75f6fb18a46f",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df.dtypes"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "abcfbe53-141c-40f4-a5a4-2bc184d1a476",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df.describe()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "2908b908-6a11-4b26-bf14-dfe597ba15a3",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df.describe(include='object')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "4ac579fa-432b-4965-8369-a79b0d818427",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df.State"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "2489a580-c550-426f-b378-8181b4208fd0",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df['International plan']"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "4c656835-027c-4286-8363-0655d7365624",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df[['State', 'International plan']]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "b9be4dc8-2379-4546-aee5-89ab2c131b2a",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df.Churn.unique()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f762159d-4238-4962-b75c-5c1a4190fd82",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df.Churn.unique()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "8e71e868-eb87-46a1-89d6-4b7f0392c8ce",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df[df['International plan']=='No']"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "c16ca5d0-bbbb-4e9d-b54f-3bd38db14106",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df[(df['International plan']=='No') & (df['Churn']==True)]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "671275b3-5280-42b3-8bc3-30d5e08bc15e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df.iloc[14]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a1119269-f85e-4f0f-8b47-68b4f334a3ba",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df.iloc[14,-1]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "9e337dab-6ab5-431b-a77a-88f84f13b760",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df.iloc[22:33]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "916ffd07-7e9f-41b8-b3c2-1912163aa223",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "state = df.copy()\n",
+    "state.set_index('State', inplace=True)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "5ef25a29-ff99-42d9-9c1d-928a17f6ce11",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "state.head()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "b19d511f-015d-4590-96b6-cb28d1564c32",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "state.loc['OH']"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "4247f80a-3f73-4403-aa58-c3ebb2e2e77d",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df.isnull().sum()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "c9143d99-4f04-460f-a8ae-118c5d24d547",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df.isnull().sum()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "39bdf392-73fb-4200-b216-cf05765f2ec4",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df.isnull().sum()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "bdbbf06a-1da3-479c-8bdb-db63ed1b0684",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df.drop('Area code', axis=1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "3779ec4d-e9f9-4b94-828c-db322500b984",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df['New Column'] = df['Total night minutes'] + df['Total intl minutes']"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a49430d5-c05f-4850-986f-06b5de5a7c3e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df.head()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a155c915-f28e-40cd-94e6-6be2d8e59135",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df['New Column'] = 100"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "1447bcf4-d874-465e-836b-72e0a559c42e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df.head()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "5870c973-cb3d-4b5c-8d3d-bc2b88aec797",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df.iloc[0,-1] = 10"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "9c1785b2-d6b3-4835-98bf-507c4a652b09",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df.head()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "4b06fc84-f550-4177-b225-29a1940f1085",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df['Churn Binary'] = df['Churn'].apply(lambda x: 1 if x==True else 0)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "21fcb5aa-c60e-4b94-ad79-24c900801e4f",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df[df['Churn']==True].head()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "115849d5-8327-4116-90c7-b161cf2667ca",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df.to_csv('output.csv')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "1a344979-e3e0-4d98-8b61-bfba7158486d",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df.to_json()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "310ca9b1-cebd-4ffb-b507-9c3462e786eb",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "del df"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.7"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
